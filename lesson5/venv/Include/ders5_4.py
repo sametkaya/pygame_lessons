@@ -38,14 +38,18 @@ class TargetOne():
             #self.rectangle[0]=self.rectangle[0]-self.mx*2
             #self.rectangle[1]=self.rectangle[1]-self.my*2
             self.rectangle.centerx= self.rectangle.centerx-self.mx*2
+            if self.explosionImageOrder==8:
+                gameTargets.remove(self)
 
             screen.blit(self.explosionImages[self.explosionImageOrder], [self.rectangle[0]-int(self.explosionImages[self.explosionImageOrder].get_width()/2),self.rectangle[1]-int(self.explosionImages[self.explosionImageOrder].get_height()/2)])
             if self.explosionImageOrder==8:
                 self.explosionImageOrder=-1
-
-    def explosion(self):
-        if self.life<=0:
+    def hit(self):
+        self.life= self.life-50
+        if self.life<=0 and self.explosionImageOrder<0:
             self.explosionImageOrder=0
+
+
 
 class Bullet():
     def __init__(self,plane):
@@ -98,6 +102,7 @@ class Plane():
             if self.shootImageOrder==4:
                 self.shootImageOrder=-1
 
+
         for bullet in self.bullets:
             bullet.draw(screen)
             #rectangle sınıfının contains fonsiyonu dörtgenin diğerinin içinde olup olmadığı bilgisini döndürür. 
@@ -135,7 +140,25 @@ backGroundImage=pygame.image.load("images/png/BG.png")
 backGroundImage= pygame.transform.scale(backGroundImage, (gameDisplay.get_width(), gameDisplay.get_height()))
  #ekranı her framede tekrar çizdiriyoruz
 gamePlane=Plane(gameDisplay)
-gameTarget1=TargetOne(gameDisplay)
+gameTargets=[]
+def generateTarget():
+    gameTargets.append(TargetOne(gameDisplay))
+def drawTargets():
+    for target in gameTargets:
+        target.draw(gameDisplay)
+        for bullet in gamePlane.bullets:
+            #eğer eşleşme varsa
+            if target.rectangle.colliderect(bullet.rectangle):
+                #target hit almış demektir.
+                target.hit()
+                #mermi kaybolmalı
+                gamePlane.bullets.remove(bullet)
+
+        # if not gameDisplay.get_rect().contains(target.rectangle):
+        #     gameTargets.remove(target)
+
+
+
 x=0
 while not crashed:
     #arkaplan resmini scroll şekilde ilerletmek için
@@ -151,6 +174,8 @@ while not crashed:
         if event.type == pygame.QUIT:
             crashed = True
         if event.type == pygame.KEYDOWN:
+            if event.key==pygame.K_a:
+                generateTarget()
             if event.key == pygame.K_UP:
                 gamePlane.my=-1
             if event.key == pygame.K_DOWN:
@@ -161,7 +186,6 @@ while not crashed:
                 gamePlane.mx=1
             if event.key == pygame.K_SPACE:
                 gamePlane.fire(gameDisplay)
-                gameTarget1.explosion()
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_UP:
                 gamePlane.my=0
@@ -173,8 +197,7 @@ while not crashed:
                 gamePlane.mx=0
 
     gamePlane.draw(gameDisplay)
-    gameTarget1.draw(gameDisplay)
-
+    drawTargets()
     pygame.display.update()
     clock.tick(60)
 
