@@ -4,7 +4,7 @@ import pygame
 import sys
 import math
 import random
-
+from Chapter import ChapterOne
 
 pygame.init()
 
@@ -15,72 +15,50 @@ pygame.display.set_caption('Gamemaker')
 
 crashed = False
 
-white = (255, 255,255)
-
-
-
 clock = pygame.time.Clock()
+chapter= ChapterOne(gameDisplay)
+chapter.start(gameDisplay)
+endEvent=pygame.event.Event(pygame.USEREVENT, attr1='endEvent')
 
- #ekranı her framede tekrar çizdiriyoruz
-gamePlane=Plane(gameDisplay)
-gameTargets=[]
-def generateTarget():
-    gameTargets.append(TargetOne(gameDisplay))
-def drawTargets():
-    for target in gameTargets:
-        target.draw(gameDisplay)
-        for bullet in gamePlane.bullets:
-            #eğer eşleşme varsa
-            if target.rectangle.colliderect(bullet.rectangle):
-                #target hit almış demektir.
-                target.hit()
-                #mermi kaybolmalı
-                gamePlane.bullets.remove(bullet)
-
-        # if not gameDisplay.get_rect().contains(target.rectangle):
-        #     gameTargets.remove(target)
-
-
-
-x=0
+end=False
 while not crashed:
-    #arkaplan resmini scroll şekilde ilerletmek için
-    #çizilen resmin x ekseni azalarak devam edecek şekilde çizdiriyoruz
-    gameDisplay.blit(backGroundImage,(x,0))
-    x=x-1
-    #daha sonra aynı resmi ekranın sonunda tekrar çizdiriyoruz.
-    gameDisplay.blit(backGroundImage,(gameDisplay.get_width()+x,0))
-    #resim dönüşünde x değerini sıfırlıyoruz
-    if gameDisplay.get_width() == -x:
-        x=0
+
     for event in pygame.event.get():
+
         if event.type == pygame.QUIT:
             crashed = True
-        if event.type == pygame.KEYDOWN:
-            if event.key==pygame.K_a:
-                generateTarget()
+        elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_UP:
-                gamePlane.my=-1
+                chapter.plane.my=-1
             if event.key == pygame.K_DOWN:
-                gamePlane.my=1
+                chapter.plane.my=1
             if event.key == pygame.K_LEFT:
-                gamePlane.mx=-1
+                chapter.plane.mx=-1
             if event.key == pygame.K_RIGHT:
-                gamePlane.mx=1
+                chapter.plane.mx=1
             if event.key == pygame.K_SPACE:
-                gamePlane.fire(gameDisplay)
-        if event.type == pygame.KEYUP:
+                chapter.plane.fire(gameDisplay)
+        elif event.type == pygame.KEYUP:
             if event.key == pygame.K_UP:
-                gamePlane.my=0
+                chapter.plane.my=0
             if event.key == pygame.K_DOWN:
-                gamePlane.my=0
+                chapter.plane.my=0
             if event.key == pygame.K_LEFT:
-                gamePlane.mx=0
+                chapter.plane.mx=0
             if event.key == pygame.K_RIGHT:
-                gamePlane.mx=0
+                chapter.plane.mx=0
+        #event karşılaştırmalarında eşitlik koşulu çalışır
+        #eventlar aynı olmalı özellikleriyle birlikte
+        elif event== chapter.finishEvent:
+            print(event)
+            end=True
 
-    gamePlane.draw(gameDisplay)
-    drawTargets()
+        elif event== chapter.plane.exposedEvent:
+            print(event)
+    if not end:
+        chapter.draw(gameDisplay)
+
+
     pygame.display.update()
     clock.tick(60)
 
