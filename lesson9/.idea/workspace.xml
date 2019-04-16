@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85eb4849-b426-42d7-abdd-0730e1e8dc75" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lesson1/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lesson1/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lesson1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lesson1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lesson1/venv/Include/ders1_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/../lesson1/venv/Include/ders1_1.py" afterDir="false" />
@@ -29,6 +28,11 @@
       <change beforePath="$PROJECT_DIR$/../lesson7/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lesson7/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lesson7/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lesson7/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lesson7/venv/Include/Menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/../lesson7/venv/Include/Menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Include/images/Tiles/Bone (1).png" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Include/images/tiles/Bone (1).png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Include/images/Tiles/Bone (2).png" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Include/images/tiles/Bone (2).png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Include/images/Tiles/Bone (4).png" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Include/images/tiles/Bone (4).png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Include/images/Tiles/Tile (15).png" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Include/images/tiles/Tile (15).png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Include/images/Tiles/Tile (3).png" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Include/images/tiles/Tile (3).png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,31 +42,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/Include/Game.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-              <folding>
-                <element signature="e#136#149#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/venv/Include/Player.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/venv/Include/GameObject.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="50">
@@ -74,8 +54,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/venv/Include/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="125">
+              <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -106,7 +86,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
     <option name="width" value="1938" />
@@ -137,6 +117,13 @@
               <item name="lesson9" type="462c0819:PsiDirectoryNode" />
               <item name="venv" type="462c0819:PsiDirectoryNode" />
               <item name="Include" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lesson9" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lesson9" type="462c0819:PsiDirectoryNode" />
+              <item name="venv" type="462c0819:PsiDirectoryNode" />
+              <item name="Include" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lesson9" type="b2602c69:ProjectViewProjectNode" />
@@ -223,7 +210,7 @@
     <configuration />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23265037" />
@@ -245,16 +232,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/venv/Include/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/Include/images/Attack__000.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -274,13 +251,6 @@
     <entry file="file://$PROJECT_DIR$/venv/Include/images/player/Idle__000.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Include/GameObject.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/Include/Player.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -288,6 +258,23 @@
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Include/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Include/GameObject.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
         </state>
       </provider>
     </entry>
